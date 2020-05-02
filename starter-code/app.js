@@ -112,7 +112,7 @@ function multiplyArray(multArr) { //eslint-disable-line
   var multNumber1 = multiply(multArr[0], multArr[1]);
   var multNumber2 = multiply(multNumber1[0], multArr[2]);
   var string = 'The numbers ' + multArr[0] + ',' + multArr[1] + ',' + multArr[2] + ' have a product of ' + multNumber2[0] + '.';
-  console.log('The answer is ' + multNumber2[0], string);
+  console.log('The answer equals ' + multNumber2[0], string);
   return [multNumber2[0], string];
 }
 
