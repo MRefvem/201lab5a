@@ -11,11 +11,12 @@ Test this function by hand in the console to get it working, and when you think 
 function sum(a, b) { //eslint-disable-line
   var add = a + b;
   var string = 'The sum of ' + a + ' and ' + b + ' is ' + add + '.';
+  // console.log(string);
   return [add, string];
 }
 
 // Here is the test for sum(); uncomment it to run it
-sum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -31,11 +32,12 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) { //eslint-disable-line
   var times = a * b;
   var string = 'The product of ' + a + ' and ' + b + ' is ' + times + '.';
+  // console.log(string);
   return [times, string];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-multiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -51,12 +53,20 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+function sumAndMultiply(a,b,c) { //eslint-disable-line
+  var addOne = sum(a, b); // addOne = [11, string]
+  var addTwo = sum(addOne[0], c); // addTwo = 11, 5
+  addOne = sum(addOne[0], c);
+  // console.log('The answer for addOne is ' + addOne);
+  var addMultiply = multiply(a, b);
+  addMultiply = multiply(addMultiply[0], c);
+  var string = a + ' and ' + b + ' and ' + c + ' sum to ' + addOne[0] + '.';
+  var string2 = 'The product of ' + a + ' and ' + b + ' and ' + 5 + ' is ' + addMultiply[0] + '.';
+  return [addOne[0], addMultiply[0], string, string2];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
